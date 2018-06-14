@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 const historyRouter = require('./modules/routes/history.router');
 app.use('/history', historyRouter);
 
-const projectRouter = require();
+const projectRouter = require('./modules/routes/project.router');
 app.use('/project', projectRouter);
 // Listen
 app.listen(PORT, ()=>{
