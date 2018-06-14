@@ -6,10 +6,16 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Time Tracker</title>
 
+   <!-- Vendors -->
+   <script src="./vendors/angular.min.js"></script>
+   <script src="./vendors/angular-route.min.js"></script>
+
    <!-- Scripts -->
    <script src="./scripts/client.js"></script>
 </head>
-<body>
-   <h1>Hello World!</h1>
+<body ng-app="TimeTracker">
+   <ng-view>
+      <!-- View Here -->
+   </ng-view>
 </body>
 </html>
