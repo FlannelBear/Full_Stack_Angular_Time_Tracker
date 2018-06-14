@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 3000;
 const historyRouter = require('./modules/routes/history.router');
 app.use('/history', historyRouter);
 
+const projectRouter = require();
+app.use('/project', projectRouter);
 // Listen
 app.listen(PORT, ()=>{
    console.log('Server running on port: ', PORT);
