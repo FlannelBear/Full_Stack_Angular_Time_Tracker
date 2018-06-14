@@ -1,0 +1,30 @@
+{
+  "name": "time-tracker",
+  "version": "0.0.1",
+  "description": "Extended weekend challenge for Prime Digital Academy",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlannelBear/Time-Tracker.git"
+  },
+  "keywords": [
+    "angular",
+    "express",
+    "node"
+  ],
+  "author": "Joshua M Evans",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlannelBear/Time-Tracker/issues"
+  },
+  "homepage": "https://github.com/FlannelBear/Time-Tracker#readme",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "angular-route": "^1.7.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
