@@ -1,5 +1,5 @@
 const pg = require('pg');
-const Pool = pg.Pool;
+const Pool = pg.Pool;n
 
 const config = {
    database: 'time_tracker',
