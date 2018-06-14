@@ -1,6 +1,11 @@
 # Time-Tracker
 This is an extended weekend project for Prime.  
 
+## Database Queries
+
+The queries used to set up the database can be found [here](/database.sql), in the provided database.sql file.
+
+
 # Given Instructions 
 ___
 # Time Tracker Project
