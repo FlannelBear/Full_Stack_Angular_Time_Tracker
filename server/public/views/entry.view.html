@@ -22,6 +22,17 @@
 </md-input-container>
 </form>
 
-<ul ng-repeat="entry in EC.entryList">
-   <li>{{entry.description}}, {{entry.project}}, {{entry.hours}}, {{entry.date}}</li>
-</ul>
+<table ng-table ="entryTable">
+      <thead>
+            <th>Entry</th>
+            <th>Project</th>
+            <th>Date</th>
+            <th>Hours</th>
+      </thead>
+      <tr ng-repeat="entry in EC.entryList">
+            <td data-title="'Description'">{{entry.description}}</td>
+            <td data-title="'Project'">{{entry.project}}</td>
+            <td data-title="'Date'">{{entry.date | date: 'MM/dd/yyyy'}}</td>
+            <td data-title="'Hours'">{{entry.hours}}</td>
+      </tr>
+</table>
