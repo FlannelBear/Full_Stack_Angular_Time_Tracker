@@ -19,6 +19,8 @@
    <script src="./scripts/client.js"></script>
    <script src="./scripts/services/tracker.service.js"></script>
    <script src="./scripts/controllers/entry.controller.js"></script>
+   <script src="./scripts/controllers/project.controller.js"></script>
+   <script src="./scripts/controllers/report.controller.js"></script>
 
    <!-- Styles -->
    <link rel="stylesheet" href="./vendors/angular-material.min.css">
@@ -26,6 +28,17 @@
    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body ng-app="TimeTracker">
+   <md-nav-bar md-selected-nav-item="currentNavItem">
+      <md-nav-item md-nav-href="#!/" name="Add Entry">
+         Add Entry
+      </md-nav-item>
+      <md-nav-item md-nav-href="#!/project" name="Project Page">
+         Projects
+      </md-nav-item>
+      <md-nav-item md-nav-href="#!/report" name="Reports">
+         Reports
+      </md-nav-item>
+   </md-nav-bar>
    <ng-view>
       <!-- View Here -->
    </ng-view>
