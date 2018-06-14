@@ -4,8 +4,8 @@
    <input type="text" ng-model="EC.descriptionIn" placeholder="Testing"/>
 </md-input-container>
 <md-input-container>
-   <md-select ng-model="EC.projectIn" placeholder="Select a state">
-      <md-option ng-value="opt">#</md-option> 
+   <md-select ng-model="EC.projectIn" placeholder="Select a Project">
+      <md-option ng-value="project.project" ng-repeat="project in EC.projectList">{{project.project}}</md-option> 
    </md-select>
 </md-input-container>
 <md-input-container>

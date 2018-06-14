@@ -7,7 +7,13 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
          vm.entryList = TrackerService.data;
       });
    }
+   vm.getProjects = function(){
+      TrackerService.get('project', null).then(function(){
+         vm.projectList = TrackerService.data;
+      });
+   }
    
    vm.getEntries();
+   vm.getProjects();
 
 }]);
