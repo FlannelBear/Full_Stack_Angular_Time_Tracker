@@ -1,1 +1,27 @@
-<h1>I'm HOME!</h1>
+<h1>Add Entry</h1>
+<form>
+<md-input-container layout="100">
+   <input type="text" ng-model="EC.descriptionIn" placeholder="Testing"/>
+</md-input-container>
+<md-input-container>
+   <md-select ng-model="EC.projectIn" placeholder="Select a state">
+      <md-option ng-value="opt">#</md-option>
+   </md-select>
+</md-input-container>
+<md-input-container>
+   <md-datepicker ng-model="EC.dateIn" aria-label="datepicker" required></md-datepicker>
+</md-input-container>
+<md-input-container>
+   <input type="time" ng-model="EC.startTimeIn" placeholder="start time"/>
+</md-input-container>
+<md-input-container>
+      <input type="time" ng-model="EC.endTimeIn" placeholder="end time"/>
+</md-input-container>
+<md-input-container>
+   <md-button class="md-primary">Submit</md-button>
+</md-input-container>
+</form>
+
+<ul ng-repeat="entry in EC.entryList">
+   <li>{{entry.description}}, {{entry.project}}, {{entry.hours}}, {{entry.date}}</li>
+</ul>

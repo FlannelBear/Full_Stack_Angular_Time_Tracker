@@ -3,7 +3,7 @@ app.service('TrackerService', ['$http', function($http){
    let sv = this;
 
    sv.get = function(url, param){
-      $http({
+      return $http({
          method: 'GET',
          url: `/${url}`
       }).then(function(response){

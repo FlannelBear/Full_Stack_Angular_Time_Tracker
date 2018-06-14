@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const pool = require('../pools/pool');
 
 router.get('/', (req, res)=>{
    console.log('Handling GET for /history');

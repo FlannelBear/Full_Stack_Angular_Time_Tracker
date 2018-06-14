@@ -1,4 +1,6 @@
-const app = angular.module('TimeTracker', ['ngRoute', function($routeProvider){
+const app = angular.module('TimeTracker', ['ngRoute', 'ngMaterial']);
+
+app.config(function($routeProvider){
 
    $routeProvider.when('/', {
       templateUrl: '../views/entry.view.html',
@@ -7,5 +9,5 @@ const app = angular.module('TimeTracker', ['ngRoute', function($routeProvider){
       template: '<h1>404 Page Not Found</h1><p>Press the back button to return to site</p>'
    });
 
-}]);
+});
 
