@@ -21,6 +21,10 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
          vm.getEntries();
       });
    }
+
+   vm.deleteEntry = function(click){
+      console.log(click);
+   }
    
    vm.getEntries();
    vm.getProjects();
