@@ -41,5 +41,12 @@ app.controller('ProjectController', ['TrackerService', function(TrackerService){
       });
    } // end addProject
 
+   vm.deleteProject = function(click){
+      console.log(click.project.project.id);
+      TrackerService.delete('project', click.project.project.id).then(function(){
+         vm.displayProjects();
+      });
+   }
+
    vm.displayProjects();
 }]);
