@@ -16,7 +16,6 @@ app.service('TrackerService', ['$http', function($http){
          method: 'GET',
          url: `/${url}`
       }).then(function(response){
-         console.log(response.data);
          sv.data = response.data;
       }).catch(function(error){
          console.log(`Error handling GET for ${url}: ${error}`);

@@ -8,7 +8,7 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
       });
    }
    vm.getProjects = function(){
-      TrackerService.get('project').then(function(){
+      TrackerService.get('project/all').then(function(){
          vm.projectList = TrackerService.data;
       });
    }
