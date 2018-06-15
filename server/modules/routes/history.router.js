@@ -15,4 +15,8 @@ router.get('/', (req, res)=>{
    });
 });
 
+router.post('/', (req, res)=>{
+   queryText = 'insert into entry ("description", "date", "hours", "project_id") values ($1, $2, $3, $4);';
+});
+
 module.exports = router;

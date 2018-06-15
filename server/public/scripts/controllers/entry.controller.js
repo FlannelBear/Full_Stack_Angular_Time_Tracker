@@ -13,8 +13,9 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
       });
    }
 
-   vm.addEntry = function(){
-      TrackerService.post().then();
+   vm.addEntry = function(clickedItem){
+      console.log(clickedItem);
+      // TrackerService.post('history', data).then();
    }
    
    vm.getEntries();
