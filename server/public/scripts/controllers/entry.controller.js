@@ -12,6 +12,10 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
          vm.projectList = TrackerService.data;
       });
    }
+
+   vm.addEntry = function(){
+      TrackerService.post().then();
+   }
    
    vm.getEntries();
    vm.getProjects();
