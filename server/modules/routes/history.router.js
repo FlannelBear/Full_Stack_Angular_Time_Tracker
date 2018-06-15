@@ -17,6 +17,12 @@ router.get('/', (req, res)=>{
 
 router.post('/', (req, res)=>{
    queryText = 'insert into entry ("description", "date", "hours", "project_id") values ($1, $2, $3, $4);';
+   pool.query(queryText, [req.body.description, req.body.date, req.body.hours, req.body.project_id]).then((result)=>{
+      res.sendStatus(201);
+   }).catch((error)=>{
+      console.log('Error handling POST for /history: ', error);
+      res.sendStatus(500);
+   });
 });
 
 module.exports = router;
