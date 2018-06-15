@@ -3,12 +3,12 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
    console.log('HomeController');
 
    vm.getEntries = function(){
-      TrackerService.get('history', null).then(function(){
+      TrackerService.get('history').then(function(){
          vm.entryList = TrackerService.data;
       });
    }
    vm.getProjects = function(){
-      TrackerService.get('project', null).then(function(){
+      TrackerService.get('project').then(function(){
          vm.projectList = TrackerService.data;
       });
    }
@@ -23,10 +23,18 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
    }
 
    vm.deleteEntry = function(click){
-      TrackerService.delete('history', click.entry.entry_id).then(function(){
+      TrackerService.delete('history', click.entry.entry_id, null).then(function(){
          vm.getEntries();
       });
    }
+
+   // let modifier = 'asc';
+   // vm.sortEntries = function(param){
+   //    modifier == 'asc' ? modifier = 'desc' : modifier = 'asc';
+   //    TrackerService.get('history').then(function(){
+         
+   //    });
+   // }
    
    vm.getEntries();
    vm.getProjects();
