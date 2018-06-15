@@ -24,4 +24,15 @@ app.service('TrackerService', ['$http', function($http){
          console.log('Error handling POST in service', error);
       });
    } // end POST
+
+   sv.delete = function(url, id){
+      return $http({
+         method: 'DELETE',
+         url: `/${url}/${id}`
+      }).then(function(response){
+         console.log('Delete handled');
+      }).catch(function(error){
+         console.log('Error handling DELETE for /history: ', error);
+      });
+   }
 }]);

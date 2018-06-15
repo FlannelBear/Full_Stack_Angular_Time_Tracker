@@ -23,7 +23,9 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
    }
 
    vm.deleteEntry = function(click){
-      console.log(click);
+      TrackerService.delete('history', click.entry.id).then(function(){
+
+      });
    }
    
    vm.getEntries();
