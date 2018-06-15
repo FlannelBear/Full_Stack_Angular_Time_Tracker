@@ -13,8 +13,12 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
       });
    }
 
-   vm.addEntry = function(clickedItem){
-      console.log(clickedItem);
+   vm.addEntry = function(){
+      console.log(vm.descriptionIn);
+      console.log(vm.projectIn);
+      console.log(vm.dateIn);
+      console.log(vm.startTimeIn);
+      console.log(vm.endTimeIn);
       // TrackerService.post('history', data).then();
    }
    
