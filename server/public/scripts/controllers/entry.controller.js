@@ -14,12 +14,12 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
    }
 
    vm.addEntry = function(){
-      console.log(vm.descriptionIn);
-      console.log(vm.projectIn);
-      console.log(vm.dateIn);
-      console.log(vm.startTimeIn);
-      console.log(vm.endTimeIn);
-      // TrackerService.post('history', data).then();
+      const entry = new Entry(vm.descriptionIn, vm.dateIn, vm.startTimeIn, vm.endTimeIn, vm.projectIn);
+      entry.date = entry.formatDate();
+      entry.hours = entry.getHours();
+      TrackerService.post('history', entry).then(function(){
+         vm.getEntries();
+      });
    }
    
    vm.getEntries();
