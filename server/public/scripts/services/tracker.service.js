@@ -11,5 +11,17 @@ app.service('TrackerService', ['$http', function($http){
       }).catch(function(error){
          console.log(`Error handling GET for ${url}: ${error}`);
       });
-   }
+   } // end GET
+
+   sv.post = function(url, data){
+      return $http({
+         method: 'POST',
+         url: `/${url}`,
+         data: data
+      }).then(function(response){
+         console.log('POST handled');
+      }).catch(function(error){
+         console.log('Error handling POST in service', error);
+      });
+   } // end POST
 }]);
