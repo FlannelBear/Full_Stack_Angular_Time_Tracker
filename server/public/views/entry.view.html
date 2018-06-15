@@ -30,11 +30,13 @@
             <th><md-button class="md-no-focus" ng-click="EC.sortEntries('hours')">Hours</md-button></th>
             <th>Delete</th>
       </thead>
-      <tr ng-repeat="entry in EC.entryList">
-            <td data-title="'Description'">{{entry.description}}</td>
-            <td data-title="'Project'">{{entry.project}}</td>
-            <td data-title="'Date'">{{entry.date | date: 'MM/dd/yyyy'}}</td>
-            <td data-title="'Hours'">{{entry.hours}}</td>
-            <td><md-button class="md-warn" ng-click="EC.deleteEntry(this)">Delete</md-button></td>
-      </tr>
+      <tbody>
+            <tr ng-repeat="entry in EC.entryList">
+                  <td data-title="'Description'">{{entry.description}}</td>
+                  <td data-title="'Project'">{{entry.project}}</td>
+                  <td data-title="'Date'">{{entry.date | date: 'MM/dd/yyyy'}}</td>
+                  <td data-title="'Hours'">{{entry.hours}}</td>
+                  <td><md-button class="md-warn" ng-click="EC.deleteEntry(this)">Delete</md-button></td>
+            </tr>
+      </tbody>
 </table>

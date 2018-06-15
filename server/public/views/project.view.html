@@ -1,1 +1,24 @@
-<h1>Projects!</h1>
+<h1>Add a Project</h1>
+<form>
+   <md-input-container>
+      <input type="text" ng-model="PC.titleIn" placeholder="Project Title"/>
+   </md-input-container>
+   <md-input-container>
+      <md-button class="md-primary md-raised" ng-click="PC.addProject()">Add Project</md-button>
+   </md-input-container>
+</form>
+
+<table ng-table="projectTable">
+   <thead>
+      <th>Title</th>
+      <th>Hours</th>
+      <th>Delete</th>
+   </thead>
+   <tbody>
+      <tr ng-repeat="project in PC.projectList">
+         <td data-title="'Title'">{{project.project.name}}</td>
+         <td>{{project.hours}}</td>
+         <td><md-button>Delete</md-button></td>
+      </tr>
+   </tbody>
+</table>
