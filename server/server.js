@@ -16,6 +16,10 @@ app.use('/history', historyRouter);
 
 const projectRouter = require('./modules/routes/project.router');
 app.use('/project', projectRouter);
+
+const reportRouter = require('./modules/routes/report.router');
+app.use('/report', reportRouter);
+
 // Listen
 app.listen(PORT, ()=>{
    console.log('Server running on port: ', PORT);
