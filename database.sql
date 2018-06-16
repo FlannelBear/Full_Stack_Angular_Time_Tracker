@@ -1,15 +1,15 @@
 -- Tables
 create table entry (
 	id serial primary key,
-	"description" varchar(80),
-	"date" date,
-	"hours" decimal,
-	"project_id" int references project on delete cascade
+	"description" varchar(80) not null,
+	"date" date not null,
+	"hours" decimal not null,
+	"project_id" int references project on delete cascade not null
 );
 
 create table project (
 	id serial primary key,
-	"name" varchar(100)
+	"name" varchar(100) not null
 );
 
 -- Dummy Data for testing

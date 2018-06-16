@@ -28,13 +28,7 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
       });
    }
 
-   // let modifier = 'asc';
-   // vm.sortEntries = function(param){
-   //    modifier == 'asc' ? modifier = 'desc' : modifier = 'asc';
-   //    TrackerService.get('history').then(function(){
-         
-   //    });
-   // }
+   
    
    vm.getEntries();
    vm.getProjects();
