@@ -10,9 +10,10 @@ class Entry{
 
    // Method for handling time conversion into hours
    getHours(){
-      // let start = ((this.startTime.getHours()*60) + this.startTime.getMinutes());
-      // let end = ((this.endTime.getHours()*60) + this.endTime.getMinutes());
-      let diffMins = ((this.endTime.getHours()*60) + this.endTime.getMinutes()) - ((this.startTime.getHours()*60) + this.startTime.getMinutes());
+      let start = ((this.startTime.getHours()*60) + this.startTime.getMinutes());
+      let end = ((this.endTime.getHours()*60) + this.endTime.getMinutes());
+      end < start ? end += (24 * 60) : end;
+      let diffMins = end - start;
       let hours = (diffMins/60).toFixed(2);
       return hours;
    }
