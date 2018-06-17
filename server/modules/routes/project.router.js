@@ -15,7 +15,7 @@ router.get('/all', (req, res)=>{
 router.get('/hours', (req, res)=>{
    console.log('Handling GET for /project');
    const queryText = `select project.id, project.name as project, sum(entry.hours) as hours from project
-   join entry on project.id = entry.project_id
+   left join entry on project.id = entry.project_id
    group by project.id order by project.id;`;
    pool.query(queryText).then((result)=>{
       res.send(result.rows);
