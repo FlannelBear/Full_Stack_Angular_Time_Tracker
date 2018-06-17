@@ -14,7 +14,8 @@
    <script src="./vendors/angular-aria.min.js"></script>
    <script src="./vendors/angular-route.min.js"></script>
    <script src="./vendors/ng-table.min.js"></script>
-   <script src="./vendors/Chart.bundle.min.js"></script>
+   <script src="./vendors/Chart.min.js"></script>
+   <script src="./vendors/angular-chart.min.js"></script>
 
    <!-- Scripts -->
    <script src="./scripts/client.js"></script>
@@ -38,7 +39,7 @@
       <md-nav-item md-nav-href="#!/project" name="Project Page">
          Projects
       </md-nav-item>
-      <md-nav-item md-nav-href="#!/report" name="Reports">
+      <md-nav-item md-nav-href="#!/report" onClick="window.location.reload()" name="Reports">
          Reports
       </md-nav-item>
    </md-nav-bar>
