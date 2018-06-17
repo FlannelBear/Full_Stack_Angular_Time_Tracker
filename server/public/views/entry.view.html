@@ -21,7 +21,7 @@
    <md-button class="md-primary md-raised" ng-click="EC.addEntry()">Submit</md-button>
 </md-input-container>
 </form>
-
+<div>
 <table ng-table ="entryTable">
       <thead>
             <th><md-button class="md-no-focus" ng-click="EC.sortEntries('description')">Entry</md-button></th>
@@ -29,6 +29,7 @@
             <th><md-button class="md-no-focus" ng-click="EC.sortEntries('date')">Date</md-button></th>
             <th><md-button class="md-no-focus" ng-click="EC.sortEntries('hours')">Hours</md-button></th>
             <th>Delete</th>
+            <th>Edit</th>
       </thead>
       <tbody>
             <tr ng-repeat="entry in EC.entryList">
@@ -37,6 +38,19 @@
                   <td data-title="'Date'">{{entry.date | date: 'MM/dd/yyyy'}}</td>
                   <td data-title="'Hours'">{{entry.hours}}</td>
                   <td><md-button class="md-warn" ng-click="EC.deleteEntry(this)">Delete</md-button></td>
+                  <td><md-button><md-dialog aria-label="List dialog">
+                        <md-dialog-content>
+                          <md-list>
+                            <md-list-item ng-repeat="item in items">
+                              <p>Number {{item}}</p>
+                            </md-list-item>
+                          </md-list>
+                        </md-dialog-content>
+                        <md-dialog-actions>
+                          <md-button ng-click="closeDialog()" class="md-primary">Close Dialog</md-button>
+                        </md-dialog-actions>
+                      </md-dialog></md-button></td>
             </tr>
       </tbody>
 </table>
+</div>
