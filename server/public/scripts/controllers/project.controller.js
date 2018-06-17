@@ -1,19 +1,6 @@
 app.controller('ProjectController', ['TrackerService', function(TrackerService){
    const vm = this;
 
-   // vm.getProjects = function(){
-   //    TrackerService.get('project/all').then(function(){
-   //       vm.nameList = TrackerService.data;
-   //       console.log(vm.nameList);
-   //    });
-   // } // end getProjects
-   // vm.getHours = function(){
-   //    TrackerService.get('project/hours').then(function(){
-   //       vm.hoursList = TrackerService.data;
-   //       console.log(vm.hoursList);
-   //    });
-   // }
-
    vm.displayProjects = function(){
       TrackerService.get('project/hours').then(function(){
          console.log(TrackerService.data);

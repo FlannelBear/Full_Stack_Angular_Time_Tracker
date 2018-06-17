@@ -9,6 +9,7 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
    }
    vm.getProjects = function(){
       TrackerService.get('project/all').then(function(){
+        console.log(TrackerService.data);
          vm.projectList = TrackerService.data;
       });
    }
@@ -17,6 +18,7 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
       const entry = new Entry(vm.descriptionIn, vm.dateIn, vm.startTimeIn, vm.endTimeIn, vm.projectIn);
       entry.date = entry.formatDate();
       entry.hours = entry.getHours();
+      console.log(entry);
       TrackerService.post('history', entry).then(function(){
          vm.getEntries();
       });
