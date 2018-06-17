@@ -4,7 +4,7 @@ const pool = require('../pools/pool');
 
 router.get('/:need', (req, res)=>{
    if(req.params.need === 'label'){
-      queryText = 'select project.name from project;';
+      queryText = 'select project.name from project order by project.id;';
       pool.query(queryText).then((result)=>{
          console.log(result.rows);
          res.send(result.rows);
@@ -14,8 +14,8 @@ router.get('/:need', (req, res)=>{
       });
    } else if(req.params.need === 'data'){
       queryText = `select sum(entry.hours) as hours from project
-      join entry on project.id = entry.project_id
-      group by project.id;`;
+      left join entry on project.id = entry.project_id
+      group by project.id order by project.id;`;
       pool.query(queryText).then((result)=>{
          console.log(result.rows);
          res.send(result.rows);
