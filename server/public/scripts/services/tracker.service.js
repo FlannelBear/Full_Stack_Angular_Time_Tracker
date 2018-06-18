@@ -44,4 +44,16 @@ app.service('TrackerService', ['$http', function($http){
          console.log('Error handling DELETE for /history: ', error);
       });
    }
+
+   sv.put = function(url, object, id){
+      return $http({
+         method: 'PUT',
+         url: `/${url}/${id}`,
+         data: object
+      }).then(function(response){
+         console.log('Updated!');
+      }).catch(function(error){
+         console.log(error);
+      });
+   }
 }]);

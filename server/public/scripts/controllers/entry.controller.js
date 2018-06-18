@@ -1,4 +1,4 @@
-app.controller('EntryController', ['TrackerService', function(TrackerService){
+app.controller('EntryController', ['TrackerService', '$mdDialog', function(TrackerService, $mdDialog){
    let vm =  this;
    console.log('HomeController');
 
@@ -84,5 +84,49 @@ app.controller('EntryController', ['TrackerService', function(TrackerService){
    
    vm.getEntries();
    vm.getProjects();
+    
+  
+    vm.editEntry = function (ev, click) {
+      let editId = click.entry.entry_id;
+      let parentEl = angular.element(document.getElementById('#popupContainer'));
+      $mdDialog.show({
+        parent: parentEl,
+        targetEvent: ev,
+        template:
+          `<md-dialog aria-label="List dialog" class="padded">
+            <md-dialog-content>
+            <h3>Edit the time of the entry</h3>
+            <p>Enter the start and end times</p>
+            <md-input-container>
+              <input type="time" ng-model="newStartTimeIn" placeholder="start time"/>
+            </md-input-container>
+            <md-input-container>
+              <input type="time" ng-model="newEndTimeIn" placeholder="end time"/>
+            </md-input-container>
+            </md-dialog-content>
+            <md-dialog-actions>
+            <md-button ng-click="closeDialog()" class="md-warn md-raised">Close</md-button>
+              <md-button ng-click="sendEdit()" class="md-accent md-raised">
+                Update
+              </md-button>
+            </md-dialog-actions>
+          </md-dialog>`,
+          controller: function DialogController($scope, $mdDialog) {
+            $scope.sendEdit = function() {
+              const edit = new Entry(null, null, $scope.newStartTimeIn, $scope.newEndTimeIn, null);
+              console.log(edit);
+              edit.hours = edit.getHours();
+              TrackerService.put('history', edit, editId).then(function(){
+                vm.getEntries();
+              });
+              $mdDialog.hide();
+            }
+            $scope.closeDialog = function(){
+              $mdDialog.hide();
+            }
+          }
 
+      });
+    }
 }]);
+

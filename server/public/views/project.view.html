@@ -1,3 +1,4 @@
+<div id="popupContainer">
 <h1>Add a Project</h1>
 <form>
    <md-input-container>
@@ -12,13 +13,14 @@
    <thead>
       <th>Title</th>
       <th>Hours</th>
-      <th>Delete</th>
+      <th>Actions</th>
    </thead>
    <tbody>
       <tr ng-repeat="project in PC.projectList">
          <td data-title="'Title'">{{project.project}}</td>
          <td>{{project.hours == null ? 0 : project.hours;}}</td>
-         <td><md-button ng-click="PC.deleteProject(this)">Delete</md-button></td>
+         <td><md-button ng-click="PC.editProject($event, this)">Edit</md-button><md-button ng-click="PC.deleteProject(this)">Delete</md-button></td>
       </tr>
    </tbody>
 </table>
+</div>
