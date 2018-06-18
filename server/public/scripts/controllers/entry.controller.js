@@ -21,6 +21,7 @@ app.controller('EntryController', ['TrackerService', '$mdDialog', function(Track
       console.log(entry);
       TrackerService.post('history', entry).then(function(){
          vm.getEntries();
+         vm.clearInputs();
       });
    }
 
@@ -88,6 +89,14 @@ app.controller('EntryController', ['TrackerService', '$mdDialog', function(Track
    
    vm.getEntries();
    vm.getProjects();
+
+   vm.clearInputs = function(){
+    vm.descriptionIn = '';
+    vm.projectIn = '';
+    vm.dateIn = '';
+    vm.startTimeIn = '';
+    vm.endTimeIn = '';
+   }
     
   
     vm.editEntry = function (ev, click) {

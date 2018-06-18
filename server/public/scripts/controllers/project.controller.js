@@ -12,17 +12,22 @@ app.controller('ProjectController', ['TrackerService', '$mdDialog', function(Tra
       let project = new Project(vm.titleIn)
       TrackerService.post('project', project).then(function(){
          vm.displayProjects();
+         vm.clearInputs();
       });
    } // end addProject
 
    vm.deleteProject = function(click){
-      console.log(click.project.project.id);
-      TrackerService.delete('project', click.project.project.id).then(function(){
+      console.log(click.project.id);
+      TrackerService.delete('project', click.project.id).then(function(){
          vm.displayProjects();
       });
    }
 
    vm.displayProjects();
+
+   vm.clearInputs = function(){
+     vm.titleIn = '';
+   }
 
    vm.editProject = function (ev, click) {
       let editId = click.project.id;
