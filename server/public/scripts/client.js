@@ -1,7 +1,11 @@
 const app = angular.module('TimeTracker', ['ngRoute', 'ngMaterial']);
 
 app.config(function($routeProvider, $mdThemingProvider){
-   $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('purple').backgroundPalette('blue').warnPalette('orange');
+   $mdThemingProvider.theme('default')
+   .primaryPalette('blue')
+   .accentPalette('purple')
+   .backgroundPalette('blue')
+   .warnPalette('orange');
 
    $routeProvider.when('/', {
       templateUrl: '../views/entry.view.html',

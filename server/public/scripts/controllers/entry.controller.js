@@ -47,7 +47,9 @@ app.controller('EntryController', ['TrackerService', '$mdDialog', function(Track
           console.log(vm.entryList);
       } else if(click == 'project'){
          vm.entryList = vm.entryList.sort(function(a, b) {
-            return b.project_id - a.project_id;
+          const B = b.project.toLowerCase();
+          const A = a.project.toLowerCase();
+          return B < A ? -1 : B > A ? 1 : 0; 
           });
       } else if(click == 'date'){
          vm.entryList = vm.entryList.sort(function(a, b) {
@@ -69,7 +71,9 @@ app.controller('EntryController', ['TrackerService', '$mdDialog', function(Track
           });
       } else if(click == 'project'){
          vm.entryList = vm.entryList.sort(function(a, b) {
-            return a.project_id - b.project_id;
+          const A = a.project.toLowerCase();
+          const B = b.project.toLowerCase();
+          return A < B ? -1 : A > B ? 1 : 0; 
           });
       } else if(click == 'date'){
          vm.entryList = vm.entryList.sort(function(a, b) {

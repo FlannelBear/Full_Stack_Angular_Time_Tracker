@@ -2,7 +2,7 @@
 <h1>Add Entry</h1>
 <form>
 <md-input-container layout="100">
-   <input type="text" ng-model="EC.descriptionIn" placeholder="Testing"/>
+   <input type="text" ng-model="EC.descriptionIn" placeholder="Description of Entry"/>
 </md-input-container>
 <md-input-container>
    <md-select ng-model="EC.projectIn" placeholder="Select a Project">
@@ -37,7 +37,7 @@
                   <td data-title="'Project'">{{entry.project}}</td>
                   <td data-title="'Date'">{{entry.date | date: 'MM/dd/yyyy'}}</td>
                   <td data-title="'Hours'">{{entry.hours}}</td>
-                  <td><md-button class="md-secondary" ng-click="EC.editEntry($event, this)">Edit</md-button><md-button class="md-warn" ng-click="EC.deleteEntry(this)">Delete</md-button></td>
+                  <td><md-button class="md-accent inline" ng-click="EC.editEntry($event, this)">Edit</md-button><md-button class="md-warn inline" ng-click="EC.deleteEntry(this)">Delete</md-button></td>
             </tr>
       </tbody>
 </table>
