@@ -4,8 +4,34 @@
 
 body {
    margin-left: 10px;
+   margin-right:10px;
 }
 
 .inline {
    display: inline;
+}
+
+.pageHeader {
+   background-color: grey;
+   color: white;
+   height: 50px;
+   width: 100vw;
+   margin-left: 0;
+   margin-right: 10px;
+   text-align: center;
+}
+
+th {
+   text-align: center;
+   border: 1px black solid;
+   background-color: grey;
+   color: white;
+}
+
+td {
+   border: 1px black solid;
+   margin: 0;
+   background-color: rgba(2, 87, 167, 0.808);
+   color: white;
+   text-align: center;
 }
